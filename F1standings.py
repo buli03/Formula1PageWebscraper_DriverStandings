@@ -7,6 +7,12 @@ today = datetime.date.today();
 year = today.year
 doContinue = True
 
+#functions
+def get_Text(e):
+    if e is None:
+        return ""
+    return e.text
+
 #program
 while doContinue == True: 
     print("\n>>> Do you wish to continue? y/n")
@@ -29,11 +35,6 @@ while doContinue == True:
 
         standingsS = bs(standings2, 'html.parser')
         standingsSS = standingsS.find_all("tr")
-
-        def get_Text(e):
-            if e is None:
-                return ""
-            return e.text
 
         print(f"\n----------------------------{pickedyear} Driver Standings--------------------------------")
         for driver in standingsSS[1:]:
